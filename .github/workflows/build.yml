@@ -12,6 +12,13 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Unzip project
+      run: |
+        if [ -f v0.5.4.zip ]; then
+          unzip -o v0.5.4.zip
+          rm v0.5.4.zip
+        fi
+
     - name: Get Architecture
       run: echo $RUNNER_ARCHITECTURE
 
